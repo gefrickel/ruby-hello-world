@@ -5,7 +5,7 @@ ENV RACK_ENV production
 ENV RAILS_ENV production
 COPY . /opt/app-root/src/
 USER root
-RUN yum install scl-utils -y
+RUN sudo yum install scl-utils -y
 USER default
 RUN scl enable rh-ruby22 "bundle install"
 CMD ["scl", "enable", "rh-ruby22", "./run.sh"]
